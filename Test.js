@@ -1,6 +1,3 @@
-function Welcome() {
-    alert ("Welcome to the Bach's page!")
-}
 
 function GreetingPrompt() {
     var user = prompt("Enter your name, please: ");
@@ -22,52 +19,51 @@ function Choice(){
     }
 } 
 
+function Welcome() {
+    alert ("Welcome to the Bach's page" + " user" + "!")
+}
+
 
 function numberValidation(){
-    let number = prompt("What is my favorite number between 1 to 100?")
     
-    if (number > 3){
-        alert("too high")
-    } else if(number < 3 ){
-        alert("too low")
-    } else if(number == 3){
-        alert("Great, it is my favorite number!")
-    } else {
-        alert("Sorry, it is not a number.")
-    }
-   /*while(typeof parseduserAge != "number"){
-        alert("You are appreciated to provide us a numerical information regarding to your age.")
+    let attempts = 4 
+    let favNum = 3; 
 
-        userAge = prompt("Hello! how old are you?")
-        parseduserAge = Number(userAge)
-    }
+    for(i = 0; i < attempts; i++){
 
-    if (parseduserAge <= 18){
-        document.write("Congratulations! You start to appreciate classical music in your young age.")
-    } else {
-        document.write("Congratulations!You have abundant life experience to appreciate classical music!")
+        let number = parseInt(prompt("What is my favorite number between 1 to 5?"));
+
+        if (number === favNum){
+            alert("Great job, it is my favorite number!")
+            break;
+        } else if(number < favNum){
+            alert("too low, try higher it a little bit!");
+        } else if(number > favNum){
+            alert("too high, try again please!");
+        }
+        if(i === attempts - 1){
+            alert(`my favorite number is ${favNum}`);
+        }
     }
-    return; */
 }
 
 
 let getName = function(){
 
-    let composer_name = prompt("Name a classical music composer you like, please?");
+    let composer_name = prompt("How many time would you like to see my favorite musical composer?");
 
-    if (composer_name == "Bach"){
-        document.write("I am glad you like his work now!")
-    } else {
-        document.write("I like " + composer_name  + " too! Please feel free to let me know your thoughts. Thank you!")
+    for (let i = 0; i < composer_name; i++){
+        document.write("<img src = './images/funny_Bach.jpeg'> <p style = 'color:brown;'>Have a wonderful day!</p>")
     }
+    // if (composer_name == "Bach"){
+    //     document.write("I am glad you like his work now!")
+    // } else {
+    //     document.write("I like " + composer_name  + " too! Please feel free to let me know your thoughts. Thank you!")
+    // }
 }
 
 
 
-
-
-Welcome()
-GreetingPrompt()
 numberValidation()
-getName()
 
+//pushing data to git hub
